@@ -60,7 +60,7 @@ class Notepad:
 			pass
 
 		# Set the window text
-		self.__root.title("Untitled - Notepad")
+		self.__root.title("Untitled - KWrite")
 
 		# Center the window
 		screenWidth = self.__root.winfo_screenwidth()
@@ -140,7 +140,7 @@ class Notepad:
 									menu=self.__thisEditMenu)	
 		
 		# To create a feature of description of the notepad
-		self.__thisHelpMenu.add_command(label="About Notepad",
+		self.__thisHelpMenu.add_command(label="About KWrite",
 										command=self.__showAbout)
 		self.__thisMenuBar.add_cascade(label="Help",
 									menu=self.__thisHelpMenu)
@@ -165,7 +165,7 @@ class Notepad:
 		# exit()
 
 	def __showAbout(self):
-		showinfo("Notepad","Easy to use notepad with spellchecker option")
+		showinfo("K-Write","Easy to use notepad with spellchecker option, serving all your day to day needs")
 
 	def __openFile(self):
 		self.__file = askopenfilename(defaultextension=".txt",
@@ -180,7 +180,7 @@ class Notepad:
 			
 			# Try to open the file
 			# set the window title
-			self.__root.title(os.path.basename(self.__file) + " - Notepad")
+			self.__root.title(os.path.basename(self.__file) + " - KWrite")
 			self.__thisTextArea.delete(1.0,END)
 
 			file = open(self.__file,"r")
@@ -191,7 +191,7 @@ class Notepad:
 		
 	def __newFile(self):
 		global switch
-		self.__root.title("Untitled - Notepad")
+		self.__root.title("Untitled - KWrite")
 		self.__file = None
 		self.__thisTextArea.delete(1.0,END)
 
@@ -214,7 +214,7 @@ class Notepad:
 				file.close()
 				
 				# Change the window title
-				self.__root.title(os.path.basename(self.__file) + " - Notepad")
+				self.__root.title(os.path.basename(self.__file) + " - KWrite")
 				
 			
 		else:
@@ -230,7 +230,7 @@ class Notepad:
 			file = open(self.__file,"w")
 			file.write(self.__thisTextArea.get(1.0,END))
 			file.close()
-		self.__root.title(os.path.basename(self.__file) + " - Notepad")
+		self.__root.title(os.path.basename(self.__file) + " - KWrite")
     
 	def __reset(self):
 			count=1.0        
